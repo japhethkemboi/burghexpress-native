@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "GwKQlpJW8mgB/jDLnKfIE/dyqBlHwH19p+xrt4QSCpo=",
+  "Source": "BurghExpress.Server",
+  "BasePath": "_content/BurghExpress.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

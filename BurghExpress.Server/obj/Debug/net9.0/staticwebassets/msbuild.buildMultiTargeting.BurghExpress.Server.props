@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/BurghExpress.Server.props" />
+</Project>

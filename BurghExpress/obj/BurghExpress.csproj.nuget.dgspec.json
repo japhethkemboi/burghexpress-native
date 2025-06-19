@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/j/code/BurghExpress/BurghExpress/BurghExpress.csproj": {}
+  },
+  "projects": {
+    "/home/j/code/BurghExpress/BurghExpress/BurghExpress.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/j/code/BurghExpress/BurghExpress/BurghExpress.csproj",
+        "projectName": "BurghExpress",
+        "projectPath": "/home/j/code/BurghExpress/BurghExpress/BurghExpress.csproj",
+        "packagesPath": "/home/j/.nuget/packages/",
+        "outputPath": "/home/j/code/BurghExpress/BurghExpress/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/home/j/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0-android"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0-android35.0": {
+            "targetAlias": "net9.0-android",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0-android35.0": {
+          "targetAlias": "net9.0-android",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[9.0.51, )"
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "android-arm64": {
+          "#import": []
+        },
+        "android-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
