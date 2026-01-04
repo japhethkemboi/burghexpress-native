@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Vm+rbVxNuaM=",
+  "dgSpecHash": "c8phzmemNhE=",
   "success": true,
   "projectFilePath": "/home/j/code/BurghExpress/BurghExpress/BurghExpress.csproj",
   "expectedPackageFiles": [
+    "/home/j/.nuget/packages/fluentassertions/8.3.0/fluentassertions.8.3.0.nupkg.sha512",
     "/home/j/.nuget/packages/googlegson/2.11.0.5/googlegson.2.11.0.5.nupkg.sha512",
     "/home/j/.nuget/packages/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg.sha512",
     "/home/j/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
@@ -22,7 +23,7 @@
     "/home/j/.nuget/packages/microsoft.maui.essentials/9.0.51/microsoft.maui.essentials.9.0.51.nupkg.sha512",
     "/home/j/.nuget/packages/microsoft.maui.graphics/9.0.51/microsoft.maui.graphics.9.0.51.nupkg.sha512",
     "/home/j/.nuget/packages/microsoft.maui.resizetizer/9.0.51/microsoft.maui.resizetizer.9.0.51.nupkg.sha512",
-    "/home/j/.nuget/packages/microsoft.net.illink.tasks/9.0.5/microsoft.net.illink.tasks.9.0.5.nupkg.sha512",
+    "/home/j/.nuget/packages/microsoft.net.illink.tasks/9.0.6/microsoft.net.illink.tasks.9.0.6.nupkg.sha512",
     "/home/j/.nuget/packages/xamarin.android.glide/4.16.0.11/xamarin.android.glide.4.16.0.11.nupkg.sha512",
     "/home/j/.nuget/packages/xamarin.android.glide.annotations/4.16.0.11/xamarin.android.glide.annotations.4.16.0.11.nupkg.sha512",
     "/home/j/.nuget/packages/xamarin.android.glide.disklrucache/4.16.0.11/xamarin.android.glide.disklrucache.4.16.0.11.nupkg.sha512",
@@ -112,7 +113,8 @@
     "/home/j/.nuget/packages/xamarin.kotlinx.coroutines.core/1.9.0.2/xamarin.kotlinx.coroutines.core.1.9.0.2.nupkg.sha512",
     "/home/j/.nuget/packages/xamarin.kotlinx.coroutines.core.jvm/1.9.0.2/xamarin.kotlinx.coroutines.core.jvm.1.9.0.2.nupkg.sha512",
     "/home/j/.nuget/packages/xamarin.kotlinx.serialization.core/1.7.3.2/xamarin.kotlinx.serialization.core.1.7.3.2.nupkg.sha512",
-    "/home/j/.nuget/packages/xamarin.kotlinx.serialization.core.jvm/1.7.3.2/xamarin.kotlinx.serialization.core.jvm.1.7.3.2.nupkg.sha512"
+    "/home/j/.nuget/packages/xamarin.kotlinx.serialization.core.jvm/1.7.3.2/xamarin.kotlinx.serialization.core.jvm.1.7.3.2.nupkg.sha512",
+    "/home/j/.nuget/packages/microsoft.netcore.app.ref/9.0.5/microsoft.netcore.app.ref.9.0.5.nupkg.sha512"
   ],
   "logs": []
 }

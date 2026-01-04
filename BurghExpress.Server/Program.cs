@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -9,6 +10,7 @@ using BurghExpress.Server.Data;
 using BurghExpress.Server.Models;
 using BurghExpress.Server.Services;
 using BurghExpress.Server.Permissions;
+using BurghExpress.Server.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,33 +19,33 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddDataProtection();
 
-builder.Services.AddIdentityCore<User>()
+  builder.Services.AddIdentityCore<User>()
   .AddRoles<Role>()
-  .AddEntityFrameworkStores<ApplicationDbContext>()
+.AddEntityFrameworkStores<ApplicationDbContext>()
   .AddDefaultTokenProviders();
 
-var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+  var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 
-builder.Services.AddAuthentication(options =>
-    {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    }).AddJwtBearer(options =>
+  builder.Services.AddAuthentication(options =>
       {
-      options.RequireHttpsMetadata = false;
-      options.SaveToken = true;
-      options.TokenValidationParameters = new TokenValidationParameters
-      {
-      ValidateIssuerSigningKey = true,
-      IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings["SecretKey"])),
-      ValidateIssuer = true,
-      ValidIssuer = jwtSettings["Issuer"],
-      ValidateAudience = true,
-      ValidAudience = jwtSettings["Audience"],
-      ValidateLifetime = true,
-      ClockSkew = TimeSpan.Zero
-      };
-      });
+      options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+      options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+      }).AddJwtBearer(options =>
+        {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings["SecretKey"])),
+        ValidateIssuer = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidateAudience = true,
+        ValidAudience = jwtSettings["Audience"],
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+        };
+        });
 
 builder.Services.AddScoped<JwtService>();
 
@@ -52,6 +54,19 @@ builder.Services.AddScoped<IAuthorizationHandler, PermissionHandler>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
 
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
+
+builder.Services.AddProblemDetails(options => 
+    {
+    options.CustomizeProblemDetails = context => 
+    {
+    context.ProblemDetails.Instance = $"{context.HttpContext.Request.Method} {context.HttpContext.Request.Path}";
+    context.ProblemDetails.Extensions["requestId"] = context.HttpContext.TraceIdentifier;
+
+    var activity = System.Diagnostics.Activity.Current;
+    if(activity != null)
+    context.ProblemDetails.Extensions["traceId"] = activity.Id;
+    };
+    });
 
 builder.Services.AddControllers(options => 
     {
@@ -64,6 +79,8 @@ builder.Services.AddControllers(options =>
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<CookieToBearerMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

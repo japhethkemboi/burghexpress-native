@@ -7,18 +7,18 @@
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/j/.nuget/packages/</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/j/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.13.2</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.12.4</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/home/j/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net9.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks/9.0.5/build/Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks/9.0.5/build/Microsoft.NET.ILLink.Tasks.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks/9.0.6/build/Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks/9.0.6/build/Microsoft.NET.ILLink.Tasks.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.resizetizer/9.0.51/buildTransitive/Microsoft.Maui.Resizetizer.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.resizetizer/9.0.51/buildTransitive/Microsoft.Maui.Resizetizer.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.core/9.0.51/buildTransitive/Microsoft.Maui.Core.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.core/9.0.51/buildTransitive/Microsoft.Maui.Core.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.controls.build.tasks/9.0.51/buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.controls.build.tasks/9.0.51/buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net9.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">/home/j/.nuget/packages/microsoft.net.illink.tasks/9.0.5</PkgMicrosoft_NET_ILLink_Tasks>
+    <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">/home/j/.nuget/packages/microsoft.net.illink.tasks/9.0.6</PkgMicrosoft_NET_ILLink_Tasks>
   </PropertyGroup>
 </Project>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BurghExpress.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e6ff822d4ea5e35d62b7a6627a06c19d395e61d")]
 [assembly: System.Reflection.AssemblyProductAttribute("BurghExpress.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BurghExpress.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

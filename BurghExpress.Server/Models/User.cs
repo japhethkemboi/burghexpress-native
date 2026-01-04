@@ -6,8 +6,12 @@ public class User : IdentityUser<int>
 {
   public required string FirstName { get; set; }
   public string? LastName { get; set; }
-  public string? PhoneNumber { get; set; }
+
+  public int StatusId { get; set; }
+  public Status? Status { get; set; }
+
   public bool IsDeleted { get; set; } = false;
+
   public DateTime CreatedAt { get; set; } = DateTime.Now;
   public DateTime UpdatedAt { get; set; }
 }

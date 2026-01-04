@@ -7,7 +7,7 @@ using BurghExpress.Server.Models;
 namespace BurghExpress.Server.Data;
 
 
-public class ApplicationDbContext : IdentityDbContext<User, Role, int>
+public class ApplicationDbContext : IdentityDbContext<User, Role, UserRole>
 {
   public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
 
@@ -16,6 +16,8 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
   public DbSet<UserPermission> UserPermissions { get; set; }
 
   public DbSet<RolePermission> RolePermissions { get; set; }
+
+  public DbSet<Status> Statuses { get; set; }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
@@ -52,6 +54,10 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
       .HasDefaultValueSql("CURRENT_TIMESTAMP")
       .ValueGeneratedOnAddOrUpdate();
 
+    modelBuilder.Entity<Permission>()
+      .HasIndex(p => p.Name)
+      .IsUnique();
+
     modelBuilder.Entity<UserPermission>()
       .Property(up => up.UpdatedAt)
       .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -67,6 +73,14 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
       .HasDefaultValueSql("CURRENT_TIMESTAMP")
       .ValueGeneratedOnAddOrUpdate();
 
+    modelBuilder.Entity<Status>()
+      .Property(s => s.UpdatedAt)
+      .HasDefaultValueSql("CURRENT_TIMESTAMP")
+      .ValueGeneratedOnAddOrUpdate();
+
+    modelBuilder.Entity<Status>()
+      .HasIndex(s => s.Name)
+      .IsUnique();
 
   }
 }

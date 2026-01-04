@@ -10,6 +10,9 @@ public class UserPermission
   public int PermissionId { get; set; }
   public Permission Permission { get; set; }
 
-  public DateTime CreatedAt { get; set; } = DateTime.Now;
+  public DateTime GrantedAt { get; set; } = DateTime.Now;
+  public int GrantedById { get; set; }
+
   public DateTime UpdatedAt { get; set; }
+  public int UpdatedById { get; set; }
 }
